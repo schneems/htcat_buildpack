@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# bin/compile <build-dir> <cache-dir>
+
+mkdir -p $1/vendor/htcat/bin
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# copy binary
+cp $DIR/../vendor/htcat/bin/htcat $1/vendor/htcat/bin/htcat
+
+# set the path on startup
+mkdir -p $1/.profile.d
+echo 'export PATH=$PATH:$HOME/vendor/htcat/bin/' > $1/.profile.d/htcat.sh

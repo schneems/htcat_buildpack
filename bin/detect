@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo 'htcat'
+exit 0
